@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sergio Olivares-Rueda · Ad Designer</title>
+<meta name="description" content="Sergio Olivares-Rueda, advertisement designer in Orlando, FL. Print, digital and email ads for local businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@700;800;900&family=Inter+Tight:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: friendly, plain, a little playful, like a designer's own neighborhood magazine
+   IDEA: a paste-up desk for "The Sergio Issue": taped proofs, red proofing pen, mailing label
+   PICTURE: huge name surrounded by print-shop stickers you can move around
+   COLOUR and TYPE: newsprint paper, navy ink, one proof-orange accent; extra condensed sans + Inter Tight + handwriting
+   LAYOUT: one long issue, sections ruled like magazine departments, work as taped proofs */
+:root{color-scheme:light dark;
+--bg:light-dark(#f1ebdf,#15171c);--paper:light-dark(#fbf8f1,#1e2128);--ink:light-dark(#1b2640,#f3efe6);
+--soft:light-dark(#545c6e,#b9b4a8);--rule:light-dark(#d6cdbb,#343843);--acc:#e0562c;--tape:rgba(240,150,120,.55);
+--pen:light-dark(#1f4fb8,#8fb0ff);--shadow:0 10px 24px -12px rgba(30,25,15,.35),0 2px 4px rgba(30,25,15,.08)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Inter Tight",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+.disp{font-family:"Sofia Sans Extra Condensed","Arial Narrow",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.92}
+.hand{font-family:Caveat,"Bradley Hand",cursive;font-weight:500}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px)}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{font-family:Caveat,cursive;font-weight:700;font-size:28px;color:var(--acc);text-decoration:none;transform:rotate(-4deg)}
+.nav nav{display:flex;gap:clamp(12px,2.4vw,28px);flex-wrap:wrap}
+.nav nav a{font-size:14px;font-weight:600;text-decoration:none;padding:10px 0}
+.nav nav a:hover{color:var(--acc)}
+
+/* hero */
+.hero{position:relative;min-height:min(92vh,820px);display:grid;place-items:center;text-align:center;padding:40px 16px 80px}
+.hero .kick{font-size:clamp(18px,2.2vw,24px);font-weight:500;line-height:1.3;margin:0 0 14px}
+.hero h1{font-size:clamp(64px,13.5vw,196px);margin:0}
+.hero h1 span{display:block;font-size:.42em;letter-spacing:.04em;color:var(--soft)}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:19px;font-weight:600;text-decoration:none;position:relative;padding:8px 2px}
+.cta svg.sw{position:absolute;left:0;right:0;bottom:-6px;width:100%;height:12px}
+.cta b{display:grid;place-items:center;width:30px;height:30px;background:var(--acc);color:#fff;border-radius:4px}
+.byline{position:absolute;bottom:22px;left:0;right:0;font-size:14px;color:var(--soft)}
+.crop{position:absolute;width:28px;height:28px;border-color:var(--soft);opacity:.55}
+.crop.tl{top:18px;left:18px;border-top:1.5px solid;border-left:1.5px solid}
+.crop.tr{top:18px;right:18px;border-top:1.5px solid;border-right:1.5px solid}
+.crop.bl{bottom:18px;left:18px;border-bottom:1.5px solid;border-left:1.5px solid}
+.crop.br{bottom:18px;right:18px;border-bottom:1.5px solid;border-right:1.5px solid}
+
+/* stickers */
+.st{position:absolute;z-index:3;cursor:grab;user-select:none;touch-action:none;filter:drop-shadow(0 6px 8px rgba(30,25,15,.18));transition:filter .2s}
+.st:active{cursor:grabbing;filter:drop-shadow(0 14px 16px rgba(30,25,15,.28))}
+.coupon{background:#fffdf6;color:#1b2640;border:2px dashed #1b2640;padding:10px 14px;font-weight:700;font-size:13px;line-height:1.2;text-align:left;width:150px}
+.coupon em{display:block;font-style:normal;font-family:"Sofia Sans Extra Condensed",sans-serif;font-size:34px;font-weight:900;color:var(--acc);line-height:.9}
+.stamp{border:3px solid var(--acc);color:var(--acc);padding:6px 12px;font:900 22px/1 "Sofia Sans Extra Condensed",sans-serif;letter-spacing:.06em;border-radius:6px;background:rgba(255,255,255,.05);mix-blend-mode:multiply}
+:root[data-theme=dark] .stamp{mix-blend-mode:normal}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .stamp{mix-blend-mode:normal}}
+.chip{background:#fffdf6;color:#1b2640;width:92px;padding:6px 6px 8px;font-size:11px;line-height:1.25;text-align:left}
+.chip i{display:block;height:64px;background:var(--acc);margin-bottom:6px}
+.label{background:#fffdf6;color:#1b2640;width:210px;padding:10px 12px;font-size:12px;text-align:left;line-height:1.35;border-left:6px solid var(--acc)}
+.label strong{display:block;font:900 17px/1 "Sofia Sans Extra Condensed",sans-serif;letter-spacing:.05em;margin-bottom:5px}
+.label .bars{height:16px;margin-top:6px;background:repeating-linear-gradient(90deg,#1b2640 0 2px,transparent 2px 4px,#1b2640 4px 5px,transparent 5px 8px)}
+.note{background:#fde68a;color:#3b2f0a;width:140px;padding:14px 12px;font:600 21px/1.05 Caveat,cursive;text-align:left}
+.burst{width:104px;height:104px;display:grid;place-items:center;color:#fff;font:900 22px/.9 "Sofia Sans Extra Condensed",sans-serif;text-align:center}
+.burst svg{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.phone{background:#1b2640;color:#fff;padding:7px 12px;font:600 13px/1 ui-monospace,Menlo,monospace;border-radius:4px}
+.phone::after{content:"\2713";margin-left:8px;color:#ffb199}
+
+/* sections */
+section{padding:clamp(56px,8vw,110px) 0 0}
+.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1.5px solid var(--rule);padding-bottom:14px;margin-bottom:clamp(28px,4vw,48px)}
+.shead h2{font-size:clamp(48px,7vw,88px);margin:0}
+.shead small{font-size:14px;color:var(--soft);text-align:right}
+
+/* letter */
+.letter{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.taped{position:relative;background:var(--paper);padding:12px 12px 14px;box-shadow:var(--shadow)}
+.taped::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:var(--tape);transform:rotate(-3deg)}
+.tilt-l{transform:rotate(-2.2deg)}.tilt-r{transform:rotate(1.8deg)}
+.taped figcaption{margin-top:10px;font-size:13px;font-weight:600;line-height:1.3}
+.taped figcaption .hand{display:block;font-size:21px;font-weight:500;color:var(--pen);line-height:1.1;margin-top:2px}
+figure{margin:0}
+.letter h3{font-size:clamp(40px,5vw,60px);margin:0 0 18px}
+.letter p{margin:0 0 16px;max-width:62ch}
+.sig{font:700 44px/1 Caveat,cursive;color:var(--pen);margin:10px 0 0}
+.sigsub{font-size:14px;color:var(--soft)}
+.classified{margin-top:28px;border:2px solid var(--ink);background:var(--paper)}
+.classified div:first-child{display:flex;justify-content:space-between;gap:10px;align-items:center;background:var(--ink);color:var(--bg);padding:8px 14px;font-weight:700;font-size:15px}
+.classified div:first-child span{font:600 20px/1 Caveat,cursive;color:#ffd166}
+.classified p{margin:0;padding:12px 14px 14px;font:15px/1.55 ui-monospace,Menlo,monospace}
+.classified mark{background:none;color:inherit;border:2px solid var(--acc);border-radius:50%;padding:0 6px;margin-left:-6px}
+
+/* issue flipbook */
+.book{position:relative}
+.spread{background:var(--paper);padding:clamp(8px,1.5vw,16px);box-shadow:var(--shadow);cursor:zoom-in}
+.spread img{width:100%;height:auto;aspect-ratio:1800/1231;object-fit:cover}
+.bookbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:20px;flex-wrap:wrap}
+.pg{display:flex;gap:8px;flex-wrap:wrap}
+.pg button,.arrow{font:600 14px "Inter Tight",sans-serif;min-width:44px;height:44px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer;padding:0 12px}
+.pg button[aria-current=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.arrow:hover,.pg button:hover{border-color:var(--acc)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.pgname{font-size:15px;color:var(--soft)}
+.pgname .hand{font-size:22px;color:var(--pen)}
+
+/* work */
+.dept{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);padding:clamp(24px,3.5vw,44px) 0;border-bottom:1px solid var(--rule)}
+.dept:last-child{border-bottom:0}
+.dept h3{font-size:clamp(40px,5vw,64px);margin:0 0 10px}
+.dept p{margin:0 0 12px;color:var(--soft);max-width:44ch}
+.dept .hand{font-size:23px;color:var(--pen);line-height:1.1}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
+.tabs button{font:600 14px "Inter Tight",sans-serif;height:44px;padding:0 16px;border-radius:22px;border:1.5px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);align-items:start}
+.grid.wide{grid-template-columns:repeat(2,minmax(0,1fr))}
+.proof{background:var(--paper);padding:8px;box-shadow:var(--shadow);border:0;cursor:zoom-in;transition:transform .2s}
+.proof:hover{transform:translateY(-3px) rotate(-.4deg)}
+.proof img{width:100%;height:auto;background:#eee}
+.more{margin-top:18px;font:600 15px "Inter Tight",sans-serif;background:none;border:0;color:var(--ink);cursor:pointer;padding:10px 0;text-decoration:underline;text-decoration-color:var(--acc);text-underline-offset:5px;text-decoration-thickness:2px}
+
+/* journey */
+.journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,40px) clamp(18px,2.6vw,34px)}
+.job .ph{aspect-ratio:4/3;overflow:hidden;background:var(--bg)}
+.job .ph img{width:100%;height:100%;object-fit:cover}
+.job .when{font-size:13px;color:var(--soft);margin-top:10px}
+.job:nth-child(3n+1){transform:rotate(-1.6deg)}.job:nth-child(3n+2){transform:rotate(1.2deg) translateY(14px)}.job:nth-child(3n){transform:rotate(-.6deg)}
+.ink{display:grid;place-items:center;height:100%;background:var(--ink);color:var(--bg);text-align:center;padding:16px}
+.ink b{font:800 clamp(40px,5vw,58px)/.9 "Sofia Sans Extra Condensed",sans-serif;text-transform:uppercase}
+.next{border:2px dashed var(--acc);background:transparent;box-shadow:none;display:grid;place-items:center;text-align:center;min-height:260px}
+.next::before{display:none}
+.next .hand{font-size:28px;color:var(--acc);line-height:1.1}
+.next small{display:block;font-size:13px;color:var(--soft);margin-top:8px}
+
+/* facts */
+.facts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.label-n{border:3px solid var(--ink);background:var(--paper);padding:16px 18px}
+.label-n h3{font:900 clamp(40px,5vw,56px)/.95 "Inter Tight",sans-serif;letter-spacing:-.03em;margin:0}
+.label-n .sv{font-size:15px;border-bottom:10px solid var(--ink);padding:4px 0 8px}
+.label-n .apc{font-size:13px;font-weight:700;border-bottom:1px solid var(--ink);padding:4px 0}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding:9px 0;font-size:16px}
+.row b{font-size:24px;font-weight:800;white-space:nowrap}
+.row.big{border-bottom:6px solid var(--ink)}.row.big b{color:var(--acc);font-size:34px}
+.row small{color:var(--soft);font-size:13px}
+.label-n .fine{font-size:13px;color:var(--soft);padding-top:8px;border-top:10px solid var(--ink);margin-top:-1px}
+.after{font:500 26px/1.1 Caveat,cursive;color:var(--pen);margin:18px 0 0;transform:rotate(-1.5deg)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:800;font-size:20px}
+.steps b{display:block;font-size:20px;line-height:1.2}
+.steps span{color:var(--soft);font-size:16px}
+.steps-h{font-size:clamp(36px,4.4vw,52px);margin:0 0 8px}
+
+/* now + contact */
+.now .r{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.now .r b{font-weight:600}
+.contact a.big{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.contact a.big small{font-size:13px;color:var(--soft)}
+.contact a.big span{font-size:clamp(22px,3vw,34px);font-weight:600;overflow-wrap:anywhere}
+.contact a.big:hover span{color:var(--acc)}
+.reply{margin-top:36px;border:2px dashed var(--soft);padding:20px 22px;background:var(--paper);position:relative;max-width:560px}
+.reply::before{content:"\2702";position:absolute;top:-14px;left:22px;background:var(--bg);padding:0 6px;color:var(--soft)}
+.reply h3{font-size:30px;margin:0 0 10px}
+.reply label{display:flex;align-items:center;gap:12px;min-height:44px;font-size:17px;cursor:pointer}
+.reply input{width:22px;height:22px;accent-color:var(--acc)}
+.reply output{display:block;font:600 22px/1.2 Caveat,cursive;color:var(--pen);min-height:28px;margin-top:6px}
+footer{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:48px 0 36px;margin-top:clamp(56px,8vw,100px);border-top:1.5px solid var(--rule);font-size:14px;color:var(--soft)}
+footer .hand{font-size:26px;color:var(--acc)}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(12,14,20,.86)}
+dialog img{max-width:min(96vw,1400px);max-height:88vh;width:auto;height:auto;margin:auto;background:#fff}
+dialog .lbx{position:fixed;top:12px;right:12px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:#1b2640;font-size:24px;cursor:pointer}
+dialog.tall{overflow:auto}
+dialog.tall img{max-height:none;max-width:min(92vw,720px)}
+
+@media(max-width:900px){
+ .letter,.facts,.dept{grid-template-columns:minmax(0,1fr)}
+ .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .letter figure{max-width:420px;margin:0 auto}
+}
+@media(max-width:600px){
+ .nav nav{gap:12px}.nav nav a{font-size:13px}
+ .logo{font-size:24px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .grid.wide{grid-template-columns:minmax(0,1fr)}
+ .bookbar{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;justify-items:center}
+ .pgname{grid-column:1/-1;grid-row:1;text-align:center}
+ .pg{justify-content:center}
+ .journey{grid-template-columns:minmax(0,1fr)}
+ .job:nth-child(n){transform:rotate(0)}
+ .now .r{grid-template-columns:minmax(0,1fr);gap:2px}
+ .contact a.big{grid-template-columns:minmax(0,1fr);gap:2px}
+ .st.hide-s{display:none}
+ .hero{min-height:auto;padding:150px 12px 190px}
+ .hero h1{font-size:25vw}
+ .st.stamp{top:84px!important;right:3%!important;font-size:17px;transform:rotate(7deg)!important}
+ .st.label{bottom:62px!important;right:auto!important;left:50%!important;margin-left:-105px;transform:rotate(-2deg)!important}
+ .byline{bottom:18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.proof,.st{transition:none}.proof:hover{transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+ <a class="logo" href="#top">Sergio</a>
+ <nav aria-label="Sections"><a href="#about">About</a><a href="#issue">The Issue</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero" id="hero">
+ <i class="crop tl"></i><i class="crop tr"></i><i class="crop bl"></i><i class="crop br"></i>
+
+ <div class="st stamp" style="top:13%;right:10%;transform:rotate(8deg)">PROOF APPROVED</div>
+ <div class="st chip hide-s" style="top:44%;left:4%;transform:rotate(5deg)"><i></i><b>Proof Orange</b><br>Checked on press</div>
+ <div class="st label" style="bottom:13%;right:5%;transform:rotate(-3deg)"><strong>SPECIAL DELIVERY</strong>To: Your hiring team<br>From: Sergio, Orlando, FL<div class="bars"></div></div>
+ <div class="st note hide-s" style="top:40%;right:6%;transform:rotate(4deg)">Psst. This one's for you.</div>
+ <div class="st burst hide-s" style="bottom:16%;left:9%;transform:rotate(-10deg)"><svg viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#e0562c" points="50,0 59,18 78,8 76,29 97,30 84,46 100,60 79,66 86,86 66,82 60,100 47,86 30,98 28,77 8,80 17,61 0,50 17,39 8,20 28,22 30,2 47,14"/></svg>12+<br>YRS</div>
+ <div class="st phone hide-s" style="top:27%;left:20%;transform:rotate(-2deg)">561-370-8356</div>
+
+ <div>
+  <p class="kick">Local ads, built clean, fast<br>and right the first time.</p>
+  <h1 class="disp">Sergio<span>Olivares-Rueda</span></h1>
+  <a class="cta" href="#about">Open your special delivery <b aria-hidden="true">&darr;</b>
+   <svg class="sw" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 50 2, 120 12, 198 5" stroke="#e0562c" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></a>
+ </div>
+ <div class="byline">Advertisement designer · Orlando, FL · Fully remote</div>
+</div>
+
+<section id="about"><div class="wrap">
+ <div class="shead"><h2 class="disp">About</h2><small>From the designer</small></div>
+ <div class="letter">
+  <figure class="taped tilt-l"><img src="img/issue-1-t.jpg" alt="The Sergio Issue, a magazine cover full of local business ads" width="700" height="479" style="aspect-ratio:700/479;object-fit:cover">
+   <figcaption>The Sergio Issue<span class="hand">An open letter, made for your team.</span></figcaption></figure>
+  <div>
+   <h3 class="disp">Hi, future team.</h3>
+   <p>Every month I open a folder of client copy, a logo and a few photos, and turn it into an ad a local business is proud to run. Pet food delivery in South Myrtle Beach. A local tree service. A remodeler in Virginia Beach.</p>
+   <p>That is the work I enjoy most, and it's the work I'd love to do for your team. I design to the exact size and spec, check every phone number, price and date against the request, and deliver on deadline.</p>
+   <p>So instead of another cover letter, I made you a magazine. Every ad in it is real work I designed for local businesses at my last few jobs, with the client's words kept exactly as written.</p>
+   <p class="sig">Sergio</p>
+   <div class="sigsub">Sergio Olivares-Rueda · Advertisement Designer · Orlando, FL</div>
+   <div class="classified"><div>Classifieds <span>Help wanted? Help found.</span></div>
+    <p><mark>DESIGNER AVAILABLE.</mark> 12+ yrs building print and digital ads for local businesses. Fast, detail-obsessed, fully remote from Orlando, FL. Fluent in Illustrator, InDesign and Photoshop. Turns client copy, logos and photos into ads they're proud to run.</p></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="issue"><div class="wrap">
+ <div class="shead"><h2 class="disp">The Issue</h2><small>Six spreads · click to read full size</small></div>
+ <div class="book">
+  <div class="spread" id="spread" role="button" tabindex="0" aria-label="Open this spread full size"><img id="spreadImg" src="img/issue-1.jpg" alt="" width="1800" height="1231"></div>
+  <div class="bookbar">
+   <button class="arrow" id="prev" aria-label="Previous spread">&larr;</button>
+   <div class="pgname" id="pgname" aria-live="polite"></div>
+   <div class="pg" id="pg"></div>
+   <button class="arrow" id="next" aria-label="Next spread">&rarr;</button>
+  </div>
+ </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+ <div class="shead"><h2 class="disp">Work</h2><small>Real ads for real clients</small></div>
+ <div id="depts"></div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+ <div class="shead"><h2 class="disp">Journey</h2><small>12+ years · 5 stops so far</small></div>
+ <div class="journey" id="jobs"></div>
+</div></section>
+
+<section id="facts"><div class="wrap">
+ <div class="shead"><h2 class="disp">By the numbers</h2><small>The nerdy part</small></div>
+ <div class="facts">
+  <div>
+   <div class="label-n">
+    <h3>Designer Facts</h3>
+    <div class="sv">Serving size: 1 Advertisement Designer<br>Servings per team: as many ads as you need</div>
+    <div class="apc">Amount per career</div>
+    <div class="row big"><span>Years designing ads</span><b>12+</b></div>
+    <div class="row"><span>Digital ads delivered</span><b>2,100+</b></div>
+    <div class="row"><span>Ads in one week <small>(personal best)</small></span><b>217</b></div>
+    <div class="row"><span>Company-wide digital ads, one invoice period <small>(17 designers)</small></span><b>1 in 6</b></div>
+    <div class="row"><span>Magazine issues designed</span><b>30+</b></div>
+    <div class="row"><span>Publications planned at once</span><b>5</b></div>
+    <div class="row"><span>Errors in a team-proofed email batch</span><b>0</b></div>
+    <div class="fine">Contains Illustrator, InDesign, Photoshop and Acrobat. May contain strong opinions about kerning.</div>
+   </div>
+   <p class="after">All real numbers. I proofread them twice.</p>
+  </div>
+  <div>
+   <h3 class="disp steps-h">Client assets in.<br>Print-ready out.</h3>
+   <ol class="steps">
+    <li><div><b>Read everything first</b><span>Client text, logo, photos and the sales rep's notes, before I open Illustrator.</span></div></li>
+    <li><div><b>Lay it out to spec</b><span>The right size, bleed and margins for the slot, with one clear message.</span></div></li>
+    <li><div><b>Check every detail</b><span>Phone numbers, prices, dates and spelling against the request, word for word.</span></div></li>
+    <li><div><b>Deliver on deadline</b><span>Clean, print-ready files and a short, friendly proof note.</span></div></li>
+   </ol>
+  </div>
+ </div>
+</div></section>
+
+<section id="now" class="now"><div class="wrap">
+ <div class="shead"><h2 class="disp">Now</h2><small>Last updated November 2026</small></div>
+ <div class="r"><b>Designing</b><span>Partner emails and seasonal guides for home service pros at TheHomeMag.</span></div>
+ <div class="r"><b>Looking for</b><span>A fully remote design role. Print, digital or email ads.</span></div>
+ <div class="r"><b>Tools on the desk</b><span>Illustrator, InDesign, Photoshop, Acrobat, Stripo.</span></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+ <div class="shead"><h2 class="disp">Contact</h2><small>Say hi</small></div>
+ <a class="big" href="mailto:SergioOlivaresRueda@gmail.com"><small>Email</small><span>SergioOlivaresRueda@gmail.com</span></a>
+ <a class="big" href="tel:+15613708356"><small>Phone</small><span>561-370-8356</span></a>
+ <form class="reply" id="reply">
+  <h3 class="disp">Reply card</h3>
+  <label><input type="checkbox" name="r" value="a"> Schedule an interview with Sergio</label>
+  <label><input type="checkbox" name="r" value="b"> Hire Sergio for your design team</label>
+  <label><input type="checkbox" name="r" value="c"> Both, obviously</label>
+  <output id="replyOut"></output>
+ </form>
+ <footer><span>Sergio Olivares-Rueda · Orlando, FL · 2026</span><span class="hand">Continued in your next issue &rarr;</span></footer>
+</div></section>
+</main>
+
+<dialog id="lb" aria-label="Full size view"><button class="lbx" id="lbx" aria-label="Close">&times;</button><img id="lbImg" alt=""></dialog>
+
+<script>
+{
+const spreads=[
+ ["Cover","The Sergio Issue"],["Letter and contents","start here!"],["Featured ads","one message, room to breathe"],
+ ["Local service ads","remodeling, cleaning, trees, pets"],["Pet, beauty and auto","phone numbers you can read"],["Designer facts","the nerdy part"]];
+const depts=[
+ {t:"Print",d:"Ads for local businesses and car dealers, plus full magazine issues I designed as Creative Director.",h:"Built from the client's own copy, logo and photos.",
+  sets:[["Local business","local",8,"",6],["Automotive","auto",7,"",6],["Magazines","mag",7,"wide",4]]},
+ {t:"Digital",d:"Homepage banners and display ads for car dealers, plus social posts for local businesses.",h:"One offer you can read at a glance.",
+  sets:[["Social","social",10,"",6],["Banners","banner",9,"wide",6]]},
+ {t:"Email",d:"Email ads and web pages for dealers and local businesses, plus partner emails for TheHomeMag.",h:"Reads well on a phone, one clear button.",
+  sets:[["TheHomeMag","thm",6,"",6],["Dealer and local","email",8,"",6]],tall:1}];
+const jobs=[
+ ["Oct 2014 · Jan 2020","MJS Advertising","Graphic Artist",null,"Billboards, tri-folds and banners. Big type, one message."],
+ ["Mar 2017 · May 2024","Caribbean Living / Swanky Retreats","Creative Director","img/mag-2-t.jpg","Two magazines, 64 to 92 pages each. Covers, features and every ad page."],
+ ["Jan 2020 · Jan 2024","DOM360","Senior Designer","img/banner-1-t.jpg","40+ dealerships a month. Banner sets in up to 9 sizes."],
+ ["Feb 2023 · Jun 2024","Best Version Media","Graphic Designer","img/local-2-t.jpg","2,100+ ads for local businesses. 217 in one week."],
+ ["Jun 2024 · Now","TheHomeMag","Jr. Marketing Designer","img/thm-4-t.jpg","Partner emails for home pros in 9 markets."]];
+
+const $=s=>document.querySelector(s);
+const lb=$("#lb"),lbImg=$("#lbImg");
+const open=(src,tall)=>{lbImg.src=src;lb.classList.toggle("tall",!!tall);try{lb.showModal()}catch(e){lb.setAttribute("open","")}};
+$("#lbx").onclick=()=>lb.close();
+lb.addEventListener("click",e=>{if(e.target===lb)lb.close()});
+
+/* flipbook */
+let cur=0;const pg=$("#pg");
+pg.innerHTML=spreads.map((s,i)=>`<button aria-label="Spread ${i+1}: ${s[0]}">${i+1}</button>`).join("");
+const show=i=>{cur=(i+spreads.length)%spreads.length;$("#spreadImg").src=`img/issue-${cur+1}.jpg`;$("#spreadImg").alt=`The Sergio Issue, ${spreads[cur][0]}`;
+ $("#pgname").innerHTML=`${spreads[cur][0]} <span class="hand">${spreads[cur][1]}</span>`;
+ [...pg.children].forEach((b,j)=>b.setAttribute("aria-current",j===cur))};
+[...pg.children].forEach((b,i)=>b.onclick=()=>show(i));
+$("#prev").onclick=()=>show(cur-1);$("#next").onclick=()=>show(cur+1);
+const sp=$("#spread");sp.onclick=()=>open(`img/issue-${cur+1}.jpg`);
+sp.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();sp.onclick()}if(e.key==="ArrowRight")show(cur+1);if(e.key==="ArrowLeft")show(cur-1)};
+show(0);
+
+/* work */
+const grid=(key,n,cls,lim,tall,all)=>`<div class="grid ${cls}">${Array.from({length:all?n:Math.min(n,lim)},(_,i)=>
+ `<button class="proof" data-full="img/${key}-${i+1}.jpg" data-tall="${tall?1:""}" aria-label="View full size"><img loading="lazy" src="img/${key}-${i+1}-t.jpg" alt=""></button>`).join("")}</div>
+ ${n>lim&&!all?`<button class="more" data-more>Show all ${n}</button>`:""}`;
+$("#depts").innerHTML=depts.map((d,di)=>`<div class="dept"><div><h3 class="disp">${d.t}</h3><p>${d.d}</p><div class="hand">${d.h}</div>
+ <div class="tabs" role="group" aria-label="${d.t} work">${d.sets.map((s,si)=>`<button aria-pressed="${si===0}" data-d="${di}" data-s="${si}">${s[0]}</button>`).join("")}</div></div>
+ <div id="g${di}">${grid(d.sets[0][1],d.sets[0][2],d.sets[0][3],d.sets[0][4],d.tall)}</div></div>`).join("");
+const state=depts.map(()=>0);
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-s]");
+ if(t){const di=+t.dataset.d,si=+t.dataset.s,s=depts[di].sets[si];state[di]=si;
+  t.parentNode.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b===t));
+  $("#g"+di).innerHTML=grid(s[1],s[2],s[3],s[4],depts[di].tall);return}
+ const m=e.target.closest("[data-more]");
+ if(m){const box=m.parentNode,di=+box.id.slice(1),s=depts[di].sets[state[di]];box.innerHTML=grid(s[1],s[2],s[3],s[4],depts[di].tall,1);return}
+ const p=e.target.closest(".proof");if(p)open(p.dataset.full,p.dataset.tall);
+});
+
+/* journey */
+$("#jobs").innerHTML=jobs.map(j=>`<figure class="taped job"><div class="ph">${j[3]?`<img loading="lazy" src="${j[3]}" alt="">`:`<div class="ink"><b>Big type.<br>One message.</b></div>`}</div>
+ <figcaption>${j[1]} · ${j[2]}<span class="hand">${j[4]}</span></figcaption><div class="when">${j[0]}</div></figure>`).join("")
+ +`<figure class="taped job next"><div><div class="hand">Next issue:<br>your team?</div><small>Ad designer · fully remote</small></div></figure>`;
+
+/* reply card */
+$("#reply").addEventListener("change",()=>{const v=[...document.querySelectorAll("#reply input:checked")].map(i=>i.value);
+ $("#replyOut").textContent=v.includes("c")?"Great choice. Email or call, I'll answer fast.":v.length?"Noted! The email and phone are right above.":""});
+$("#reply").addEventListener("submit",e=>e.preventDefault());
+
+/* draggable stickers */
+document.querySelectorAll(".st").forEach(el=>{
+ let sx,sy,ox=0,oy=0,base=el.style.transform||"";
+ el.addEventListener("pointerdown",e=>{sx=e.clientX-ox;sy=e.clientY-oy;el.setPointerCapture(e.pointerId);el.style.zIndex=5});
+ el.addEventListener("pointermove",e=>{if(!el.hasPointerCapture(e.pointerId))return;ox=e.clientX-sx;oy=e.clientY-sy;el.style.transform=`translate(${ox}px,${oy}px) ${base}`});
+ el.addEventListener("pointerup",e=>el.releasePointerCapture(e.pointerId));
+});
+}
+</script>
+</body>
+</html>
